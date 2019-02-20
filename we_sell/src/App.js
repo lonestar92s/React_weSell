@@ -29,6 +29,8 @@ render() {
       <Route exact path="/" component={Home} />
       <Route path="/items" component={MainContainer} />
       <Route path="/privacypolicy" component={PrivacyPolicy} />
+      <Route path="/item" component={Items} />
+
       </div>
      </Router> 
         

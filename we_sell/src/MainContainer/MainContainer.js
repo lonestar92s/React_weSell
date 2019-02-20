@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import AddItems from '../Items/Items'
 import '../App.css'
 export default class MainContainer extends Component {
   state = {
@@ -27,7 +29,7 @@ export default class MainContainer extends Component {
 
 render(){
 const itemsList = this.state.items.map((items, index)=>{
-return <li key={index}>{items.item_name} ${items.item_price}</li>
+return <li key={index}><Link to={{pathname:'/item', state:items}}>{items.item_name}</Link></li>
   })
     return (
          <div className="App">

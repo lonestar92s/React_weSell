@@ -28,7 +28,7 @@ export default class PrivacyPolicy extends Component {
 
 <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
 
-<ul>
+<ul className="list">
 <li>Email address</li><li>First name and last name</li><li>Phone number</li><li>Address, State, Province, ZIP/Postal code, City</li><li>Cookies and Usage Data</li>
 </ul>
 			</div>

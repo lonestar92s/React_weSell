@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../App.css'
 export default class MainContainer extends Component {
   state = {
         items: []
     }
-   getNews = async () => {
+   getItems = async () => {
 
     try {
       const items = await fetch('http://localhost:9000/items');
@@ -19,23 +20,23 @@ export default class MainContainer extends Component {
 
 
  componentDidMount(){
-    this.getNews().then((data) => console.log(data,'from famous quotes'));
+    this.getItems().then((data) => console.log(data,'from famous quotes'));
   } 
 
 
 
 render(){
 const itemsList = this.state.items.map((items, index)=>{
-return <li key={index}>{items}</li>
+return <li key={index}>{items.item_name} ${items.item_price}</li>
   })
     return (
-         <div className="ItemsList">
-         
+         <div className="App">
          <h3>Items</h3>
-         <ul>{itemsList}</ul>
+         <ul className="App">{itemsList}</ul>
          </div>
       )
 	
   }
 
 }
+         

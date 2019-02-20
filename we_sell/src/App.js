@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './Home/Home';
 import Items from './Items/Items';
-import Button from './Button/Button'
 import MainContainer from './MainContainer/MainContainer'
+
 
 
 import {

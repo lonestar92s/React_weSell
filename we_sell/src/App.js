@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './Home/Home';
 import Items from './Items/Items';
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import MainContainer from './MainContainer/MainContainer'
 
 
@@ -18,14 +19,16 @@ class App extends Component {
 render() {
     return (
      <Router> 
-      <div className="App">
+      <div className="App"> 
         <nav>
         <Link to='/'>Home</Link>{' '}
         <Link to='/items'>Items</Link>{' '}
         <Link to='/profile'>My Profile</Link>{' '}
+        <Link to='/privacypolicy'>Privacy Policy</Link>{' '}
         </nav>
       <Route exact path="/" component={Home} />
       <Route path="/items" component={MainContainer} />
+      <Route path="/privacypolicy" component={PrivacyPolicy} />
       </div>
      </Router> 
         

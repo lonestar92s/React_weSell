@@ -31,7 +31,7 @@ return <li key={index}>{items.item_name} ${items.item_price}</li>
   })
     return (
          <div className="App">
-         <h3>Items</h3>
+         <h1>Items</h1>
          <ul className="App">{itemsList}</ul>
          </div>
       )

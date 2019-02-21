@@ -16,7 +16,8 @@ export default class Forms extends Component {
             item_name: this.state.item_name,
         	item_price: this.state.item_price,
             item_brand: this.state.item_brand,
-        	item_category: this.state.item_category
+        	item_category: this.state.item_category,
+            username: this.state.username
         }
         
         this.props.addItem(item)
@@ -26,12 +27,13 @@ export default class Forms extends Component {
             headers: { 
             	'Accept': 'application/json',
             	'Content-Type': 'application/json' },
-            body: JSON.stringify({
+                body: JSON.stringify({
                 "item_id": this.state.item_id,
                 "item_name": this.state.item_name,
         		"item_price": this.state.item_price,
                 "item_brand": this.state.item_brand,
-        		"item_category": this.state.item_category
+        		"item_category": this.state.item_category,
+                "username": this.state.username
             })
         });
     };
@@ -44,11 +46,12 @@ export default class Forms extends Component {
     render() {
         return (
       <form onSubmit={this.handleSubmit} id="form-input">
-        <input type='text' autoComplete="off" name="item_id" placeholder="Item ID" value={this.state.item_id} onChange={this.handleChange} required="required"  />
+        <input type='number' step='1' autoComplete="off" name="item_id" placeholder="Item ID" value={this.state.item_id} onChange={this.handleChange} required="required"  />
         <input type='text' autoComplete="off" name="item_name" placeholder="Item Name" value={this.state.item_name} onChange={this.handleChange} required="required" />
         <input type='text' autoComplete="off" name="item_brand" placeholder="Item Brand" value={this.state.item_brand} onChange={this.handleChange} required="required"  />
         <input type='text' autoComplete="off" name="item_category" placeholder="Item Category" value={this.state.item_category} onChange={this.handleChange} required="required"  />
-        <input type='text' autoComplete="off" name="item_price" placeholder="Item Price" value={this.state.item_price} onChange={this.handleChange} required="required"  />
+        <input type='number' step='1' autoComplete="off" name="item_price" placeholder="Item Price" value={this.state.item_price} onChange={this.handleChange} required="required"  />
+        
         <input type='submit' value="Submit" />
       </form>
         )

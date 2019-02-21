@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import Forms from './Forms'
 import '../App.css'
 
 export default class MainContainer extends Component {
@@ -16,7 +17,7 @@ export default class MainContainer extends Component {
    getItems = async () => {
 
     try {
-      const items = await fetch('http://localhost:9000/items');
+      const items = await fetch('http://localhost:9000/items/');
       const itemsJson = await items.json();
       this.setState({items: itemsJson});
       return itemsJson
@@ -36,12 +37,13 @@ export default class MainContainer extends Component {
 
 render(){
 const itemsList = this.state.items.map((items, index)=>{
-return <li key={index}><Link to={{pathname:'/item', state:items}}>{items.item_name} ${items.item_price}</Link></li>
+return <li key={index}><Link to={{pathname:'/item', state:items}}>{items.item_category} {items.item_name} ${items.item_price}</Link></li>
   })
     return (
          <div className="App">
          <h1>Items</h1>
          <ul className="Grid">{itemsList}</ul>
+         <Forms addItem ={this.addItem} />
          </div>
       )
 	

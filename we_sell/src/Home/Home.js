@@ -11,7 +11,7 @@ export default class Home extends Component {
         return (
      <div className="Login">
       	<FacebookLogin>
-        appId="360984134494202" 
+        appId="" 
         fields="name,email,picture"
         callback={responseFacebook}
       	</FacebookLogin>

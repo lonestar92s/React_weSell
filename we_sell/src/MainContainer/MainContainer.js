@@ -37,12 +37,12 @@ export default class MainContainer extends Component {
 
 render(){
 const itemsList = this.state.items.map((items, index)=>{
-return <li key={index}><Link to={{pathname:'/item', state:items}}>{items.item_category} {items.item_name} ${items.item_price}</Link></li>
+return <li className="card" key={index}><Link to={{pathname:`/item/${items.item_id}`, state:items}}>{items.item_name} ${items.item_price}</Link></li>
   })
     return (
          <div className="App">
          <h1>Items</h1>
-         <ul className="Grid">{itemsList}</ul>
+         <ol className="Grid">{itemsList}</ol>
          <Forms addItem ={this.addItem} />
          </div>
       )

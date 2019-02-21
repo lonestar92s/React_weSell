@@ -11,7 +11,8 @@ import MainContainer from './MainContainer/MainContainer'
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom'
 
 class App extends Component {
@@ -26,10 +27,12 @@ render() {
         <Link to='/items'>Items</Link>{' '}
         <Link to='/privacypolicy'>Privacy Policy</Link>{' '}
         </nav>
+      <Switch>
       <Route exact path="/" component={Home} />
+      <Route path="/item/:id" component={Items} />
       <Route path="/items" component={MainContainer} />
       <Route path="/privacypolicy" component={PrivacyPolicy} />
-      <Route path="/item" component={Items} />
+      </Switch>
       
 
       </div>

@@ -8,8 +8,10 @@
   margin-top: 200px;
 }
 
-
-
+.card{
+  background-color: #FFFFD5;
+  padding: 10px;
+}
 .Grid{
   margin-top: 50px;
   display: grid;

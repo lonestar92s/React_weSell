@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import AddItems from '../Items/Items'
 import '../App.css'
+
 export default class MainContainer extends Component {
   state = {
         items: []
+    }
+     addItem = (item) => {
+        let newItem = this.state.items
+        newItem.push(item)
+        this.setState({
+            items: newItem
+        })
     }
    getItems = async () => {
 
@@ -29,12 +36,12 @@ export default class MainContainer extends Component {
 
 render(){
 const itemsList = this.state.items.map((items, index)=>{
-return <li key={index}><Link to={{pathname:'/item', state:items}}>{items.item_name}</Link></li>
+return <li key={index}><Link to={{pathname:'/item', state:items}}>{items.item_name} ${items.item_price}</Link></li>
   })
     return (
          <div className="App">
          <h1>Items</h1>
-         <ul className="App">{itemsList}</ul>
+         <ul className="Grid">{itemsList}</ul>
          </div>
       )
 	

@@ -9,7 +9,7 @@ export default class Home extends Component {
       console.log(response);
     }
         return (
-     <div className="App">
+     <div className="Login">
       	<FacebookLogin>
         appId="360984134494202" 
         fields="name,email,picture"

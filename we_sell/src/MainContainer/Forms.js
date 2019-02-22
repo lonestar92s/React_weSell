@@ -8,7 +8,8 @@ export default class Forms extends Component {
         item_name: '',
         item_price: '',
         item_brand: '',
-        item_category: ''
+        item_category: '',
+        image_url: ''
     }
     handleSubmit = (event) => {
         let item = {
@@ -33,7 +34,7 @@ export default class Forms extends Component {
         		"item_price": this.state.item_price,
                 "item_brand": this.state.item_brand,
         		"item_category": this.state.item_category,
-                "username": this.state.username
+                "image_url": this.state.image_url
             })
         });
     };
@@ -51,6 +52,7 @@ export default class Forms extends Component {
         <input type='text' autoComplete="off" name="item_brand" placeholder="Item Brand" value={this.state.item_brand} onChange={this.handleChange} required="required"  />
         <input type='text' autoComplete="off" name="item_category" placeholder="Item Category" value={this.state.item_category} onChange={this.handleChange} required="required"  />
         <input type='number' step='1' autoComplete="off" name="item_price" placeholder="Item Price" value={this.state.item_price} onChange={this.handleChange} required="required"  />
+        <input type='url' autoComplete="off" name="image_url" placeholder="Image URL" value={this.state.image_url} onChange={this.handleChange} required="required" />
         
         <input type='submit' value="Submit" />
       </form>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+
 import Forms from './Forms'
 import '../App.css'
 
@@ -14,6 +15,15 @@ export default class MainContainer extends Component {
             items: newItem
         })
     }
+//Delete Item
+    deleteItem = (item) => {
+        let newItem = this.state.items
+        newItem.splice(item, 1);
+        this.setState({
+            items: newItem
+        })
+    }
+
    getItems = async () => {
 
     try {
@@ -27,7 +37,12 @@ export default class MainContainer extends Component {
   }
 
 }
+   //delete
+handleDelete = (itemToBeDeleted)=>{
+    console.log(itemToBeDeleted);
+    this.deleteItem(itemToBeDeleted.currentTarget.value)
 
+  }
 
  componentDidMount(){
     this.getItems().then((data) => console.log(data,'from famous quotes'));
@@ -37,7 +52,7 @@ export default class MainContainer extends Component {
 
 render(){
 const itemsList = this.state.items.map((items, index)=>{
-return <li className="card" key={index}><Link to={{pathname:`/item/${items.item_id}`, state:items}}>{items.item_id}. {items.item_name} ${items.item_price}</Link></li>
+return <li className="card" key={index}><Link to={{pathname:`/item/${items.item_id}`, state:items}}>{items.item_id}. {items.item_name} ${items.item_price}</Link> <button className="ui button" value={index} onClick={this.handleDelete}>Delete</button></li>
   })
     return (
          <div className="App">

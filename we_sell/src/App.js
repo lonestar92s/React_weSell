@@ -4,12 +4,7 @@ import Home from './Home/Home';
 import Items from './Items/Items';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import MainContainer from './MainContainer/MainContainer'
-
-
-
-
-
-
+import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import {
   BrowserRouter as Router,
   Route,
@@ -27,8 +22,8 @@ render() {
       <div className="App"> 
         
         <nav>
-        <Link to='/'>Home</Link>{' '}
-        <Link to='/items'>Items</Link>{' '}
+        <Link to='/'>Home<Icon name="home" /></Link>{' '}
+        <Link to='/items'>My Items</Link>{' '}
         <Link to='/privacypolicy'>Privacy Policy</Link>{' '}
         </nav>
       <Switch>

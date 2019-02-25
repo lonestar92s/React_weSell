@@ -7,4 +7,4 @@ If users do not have a log in they will have the option to create an account. If
 
 Once logged in the users can add items to the database to sell
 
-Authorization to create username will be with Facebook (API requirement)
+Authorization to create username will be with Facebook
